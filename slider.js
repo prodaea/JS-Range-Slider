@@ -184,8 +184,8 @@
 		,  insertAfter : function  insertAfter( node ){ this.$node.insertAfter ( node ); return this; }
 		, insertBefore : function insertBefore( node ){ this.$node.insertBefore( node ); return this; }
 
-		, bind    : function bind   (){ this.$evNode.bind   .apply( this.$evNode, arguments ); return this; }
-		, unbind  : function unbind (){ this.$evNode.unbind .apply( this.$evNode, arguments ); return this; }
+		, on      : function on     (){ this.$evNode.on     .apply( this.$evNode, arguments ); return this; }
+		, off     : function off    (){ this.$evNode.off    .apply( this.$evNode, arguments ); return this; }
 		, trigger : function trigger(){ this.$evNode.trigger.apply( this.$evNode, arguments ); return this; }
 		, one     : function one    (){ this.$evNode.one    .apply( this.$evNode, arguments ); return this; }
 	};

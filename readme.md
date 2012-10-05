@@ -26,7 +26,7 @@ The slider creates functioning HTML markup.  It is up to you to stylize it.  Sam
     ]
 } ) )
     .prependTo( document.body )
-    .bind     ( 'range', changeRange )
+    .on     ( 'range', changeRange )
     .setRange ( 0, 11 );
 ```
 
