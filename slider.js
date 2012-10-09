@@ -92,7 +92,7 @@
 				}
 			}
 
-			this.trigger( 'range', [ this.minPos, this.maxPos ] );
+			this.trigger( 'range.update', [ this.minPos, this.maxPos ] );
 
 			return this;
 		}
@@ -104,8 +104,19 @@
 			this.$evNode.css({ left: 0 }).animate({ left:1 }, {
 				step : function( val ){
 					self.setRange( oRange[0] + ( range[0] - oRange[0] ) * val, oRange[1] + ( range[1] - oRange[1] ) * val );
+				},
+
+				complete: function() {
+					if (self.useRange) {
+						self.trigger('range.complete', [
+							self.tabs[self.minPos],
+							self.tabs[self.maxPos]
+						]);
+					}else{
+						self.trigger('range.complete', [self.tabs[self.minPos]]);
+					}
 				}
-			} )
+			} );
 		}
 
 		, getTargetPos : function getTargetPos( ix ){
